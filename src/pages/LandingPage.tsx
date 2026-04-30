@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, BarChart3, Globe, Zap, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Shield, BarChart3, Globe, Zap, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const LandingPage: React.FC = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../../store/useAuthStore';
-import { Vote, LogIn, LogOut, User as UserIcon } from 'lucide-react';
+import { Vote, LogOut, User as UserIcon } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const { user, login, logout } = useAuthStore();

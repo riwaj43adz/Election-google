@@ -1,6 +1,7 @@
+/// <reference types="@types/google.maps" />
 import React, { useEffect, useRef, useState } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
-import { MapPin, Info, Navigation, Search } from 'lucide-react';
+import { MapPin, Navigation, Search } from 'lucide-react';
 
 const MapView: React.FC = () => {
   const mapRef = useRef<HTMLDivElement>(null);
@@ -21,7 +22,7 @@ const MapView: React.FC = () => {
       libraries: ['places']
     });
 
-    loader.load().then(() => {
+    (loader as any).load().then(() => {
       if (mapRef.current) {
         const map = new google.maps.Map(mapRef.current, {
           center: { lat: 40.7128, lng: -74.0060 }, // NYC center
@@ -56,7 +57,7 @@ const MapView: React.FC = () => {
 
         setMapLoaded(true);
       }
-    }).catch(e => {
+    }).catch((e: any) => {
       console.error("Maps failed to load", e);
       setApiKeyMissing(true);
     });

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { User, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
+import { type User, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
 import { auth, googleProvider } from '../lib/firebase';
 
 interface AuthState {

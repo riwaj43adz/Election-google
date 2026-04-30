@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useSimulationStore, Candidate } from '../store/useSimulationStore';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, PieChart, Pie } from 'recharts';
+import { useSimulationStore } from '../store/useSimulationStore';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 import { Info, RotateCcw, Vote as VoteIcon, Sparkles } from 'lucide-react';
 import { getElectionExplanation } from '../lib/gemini';
 
 const VotingSimulator: React.FC = () => {
-  const { system, candidates, totalVotes, setSystem, addVote, resetSimulation } = useSimulationStore();
+  const { system, candidates, totalVotes, addVote, resetSimulation } = useSimulationStore();
   const [explaining, setExplaining] = useState(false);
   const [explanation, setExplanation] = useState<string | null>(null);
 
