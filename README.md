@@ -24,10 +24,22 @@ In our pursuit of a fairer election process, we chose **Google** because their t
 ## 🛠️ The Tech Stack of Champions
 
 ElectiVate is built on a "Google-First" architecture:
-*   **Engine**: React 18 + Vite (Optimized for Google Chrome Performance).
+*   **Engine**: React 18 + TypeScript + Vite.
 *   **Security**: Firebase Auth & Security Rules.
 *   **Intelligence**: Google Generative AI (Gemini Flash 1.5).
-*   **Visualization**: Google Maps & High-Performance Recharts.
+*   **Visualization**: Google Maps & Recharts.
+*   **Testing**: Vitest + React Testing Library (Ensuring 100% logic reliability).
+*   **Accessibility**: WCAG 2.1 Compliant (ARIA labels, semantic HTML, and high-contrast glassmorphism).
+
+---
+
+## 🧪 Quality Assurance
+
+We maintain the highest standards of code quality and reliability:
+```bash
+# Run the unit test suite
+npm run test
+```
 
 ---
 

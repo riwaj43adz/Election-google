@@ -44,13 +44,14 @@ const VotingSimulator: React.FC = () => {
                   key={candidate.id}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => addVote(candidate.id)}
+                  aria-label={`Vote for ${candidate.name} from ${candidate.party}`}
                   className="p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 transition-all text-left group relative overflow-hidden"
                 >
                   <div className="absolute top-0 left-0 w-1 h-full" style={{ backgroundColor: candidate.color }}></div>
                   <h4 className="font-bold">{candidate.name}</h4>
                   <p className="text-xs text-gray-500">{candidate.party}</p>
                   <div className="mt-4 flex justify-between items-center">
-                    <span className="text-sm font-mono">{candidate.votes} votes</span>
+                    <span className="text-sm font-mono" aria-live="polite">{candidate.votes} votes</span>
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity">
                        <span className="text-xs bg-white/10 px-2 py-1 rounded">Vote +1</span>
                     </div>

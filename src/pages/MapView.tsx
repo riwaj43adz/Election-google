@@ -89,18 +89,26 @@ const MapView: React.FC = () => {
 
       <div className="flex-1 rounded-3xl overflow-hidden glass-card border-white/20 relative">
         {apiKeyMissing ? (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-900/50 backdrop-blur-md p-12 text-center">
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-900/50 backdrop-blur-md p-12 text-center" role="alert">
              <div className="max-w-md">
                 <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
                    <MapPin className="text-google-red w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-bold mb-4">Google Maps API Key Required</h3>
+                <h3 className="text-xl font-bold mb-4">Google Maps Configuration Required</h3>
                 <p className="text-gray-400 mb-8">
-                  To view the interactive polling map, please provide a valid <span className="text-white">Google Maps JavaScript API</span> key in your environment variables.
+                  To view the interactive polling map, please ensure your <span className="text-white">Google Maps API Key</span> is present and <strong>Billing is Enabled</strong> on your Google Cloud Project.
                 </p>
-                <div className="bg-brand-dark p-4 rounded-xl text-left font-mono text-xs border border-white/5">
-                  VITE_GOOGLE_MAPS_API_KEY=your_key_here
+                <div className="bg-brand-dark p-4 rounded-xl text-left font-mono text-xs border border-white/5 overflow-x-auto">
+                  VITE_GOOGLE_MAPS_API_KEY=AIzaSy...
                 </div>
+                <a 
+                  href="https://console.cloud.google.com/billing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-block text-blue-400 hover:underline text-sm font-bold"
+                >
+                  Enable Billing in Google Cloud →
+                </a>
              </div>
           </div>
         ) : !mapLoaded && (

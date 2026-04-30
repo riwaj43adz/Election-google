@@ -39,10 +39,10 @@ const LandingPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider text-blue-400 uppercase">
+            <span className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-wider text-blue-400 uppercase" aria-label="Tagline">
               The Future of Civic Education
             </span>
-            <h1 className="mt-6 text-5xl md:text-7xl font-extrabold tracking-tight">
+            <h1 className="mt-6 text-5xl md:text-7xl font-extrabold tracking-tight" id="main-heading">
               Empowering <span className="text-gradient">Democracy</span> <br />
               Through Technology.
             </h1>
@@ -57,10 +57,18 @@ const LandingPage: React.FC = () => {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="flex flex-wrap justify-center gap-4"
           >
-            <Link to="/simulator" className="px-8 py-4 bg-white text-brand-dark rounded-full font-bold hover:bg-gray-200 transition-all flex items-center gap-2 group shadow-xl shadow-white/5">
+            <Link 
+              to="/simulator" 
+              className="px-8 py-4 bg-white text-brand-dark rounded-full font-bold hover:bg-gray-200 transition-all flex items-center gap-2 group shadow-xl shadow-white/5"
+              aria-label="Launch Voting Simulator"
+            >
               Launch Simulator <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link to="/learn" className="px-8 py-4 glass-button font-bold flex items-center gap-2">
+            <Link 
+              to="/learn" 
+              className="px-8 py-4 glass-button font-bold flex items-center gap-2"
+              aria-label="Learn how it works"
+            >
               How it Works
             </Link>
           </motion.div>
