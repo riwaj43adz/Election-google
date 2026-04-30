@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-brand-light font-['Inter'] antialiased;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(339,49%,30%,0.2) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Outfit'] font-bold;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl;
+  }
+  
+  .glass-button {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-300 rounded-xl px-6 py-2;
+  }
+
+  .btn-google {
+    @apply flex items-center gap-2 bg-white text-gray-800 hover:bg-gray-100 transition-colors duration-200 font-medium px-4 py-2 rounded-lg shadow-sm;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-brand-dark;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20;
+}
