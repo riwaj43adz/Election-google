@@ -9,7 +9,7 @@ import Learn from './pages/Learn';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/Election-google">
       <div className="min-h-screen">
         <Navbar />
         <main>
