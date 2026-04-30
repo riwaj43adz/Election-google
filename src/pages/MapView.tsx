@@ -9,7 +9,7 @@ const MapView: React.FC = () => {
   const [apiKeyMissing, setApiKeyMissing] = useState(false);
 
   useEffect(() => {
-    const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+    const API_KEY = "AIzaSyBQQITYlaRWyBtCq8r-GRrc5Sb9hvu11qI";
 
     if (!API_KEY) {
       setApiKeyMissing(true);
