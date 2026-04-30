@@ -30,7 +30,14 @@ export const useAuthStore = create<AuthState>((set) => ({
   setUser: (user) => set({ user, loading: false }),
 }));
 
-// Initialize auth listener
-onAuthStateChanged(auth, (user) => {
-  useAuthStore.getState().setUser(user);
-});
+// Initialize auth listener only if auth is available
+if (auth) {
+  onAuthStateChanged(auth, (user) => {
+    useAuthStore.getState().setUser(user);
+  });
+} else {
+  // If no auth, set loading to false immediately so app can render
+  setTimeout(() => {
+    useAuthStore.getState().setUser(null);
+  }, 0);
+}

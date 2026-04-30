@@ -13,13 +13,27 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
-export const googleProvider = new GoogleAuthProvider();
+// Initialize Firebase only if API key is present
+const hasConfig = !!import.meta.env.VITE_FIREBASE_API_KEY;
 
-// Initialize Analytics conditionally (only in production or if measurementId exists)
-export const analytics = typeof window !== 'undefined' && firebaseConfig.measurementId ? getAnalytics(app) : null;
+let app: any;
+let auth: any;
+let db: any;
+let analytics: any = null;
+const googleProvider = new GoogleAuthProvider();
 
+if (hasConfig) {
+  try {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+    if (typeof window !== 'undefined' && firebaseConfig.measurementId) {
+      analytics = getAnalytics(app);
+    }
+  } catch (error) {
+    console.error("Firebase initialization failed:", error);
+  }
+}
+
+export { app, auth, db, googleProvider, analytics };
 export default app;
